@@ -1,0 +1,229 @@
+Group gato;
+Group pato;
+Group ping;
+Group cab;
+Group cis;
+Group tort;
+
+void setup() {
+  int y = 380;
+  size(600, 400);
+  
+  gato = gato(30, y);
+  pato = pato(300, y);
+  ping = pinguino(470, y);
+  cab = caballo(30, y/2);
+  cis = cisne(300, y/2);
+  tort = tortuga(470, y/2);
+}
+
+void draw() {
+  background(255);
+  gato.draw();
+  pato.draw();
+  ping.draw();
+  cab.draw();
+  cis.draw();
+  tort.draw();
+}
+
+Group tortuga(int x, int y){
+  Group t = new Group();
+  Style s = new Style(0,#00FF00, 1);
+  
+  Quad cabeza = new Quad(x+30,y,x+20,y-10,x+30,y-20,x+40,y-10);
+  cabeza.style = s;
+  t.addItem(cabeza);
+  
+  Quad cuerpo = new Quad(x+30,y-20,x+10,y-40,x+30,y-60,x+50,y-40);
+  cuerpo.style = s;
+  t.addItem(cuerpo);
+  
+  Triangle aleta1 = new Triangle(x+5,y-20,x+15,y-10,x+15,y-30);
+  aleta1.style = s;
+  t.addItem(aleta1);
+  
+  Triangle aleta2 = new Triangle(x+5,y-60,x+15,y-50,x+15,y-70);
+  aleta2.style = s;
+  t.addItem(aleta2);
+  
+  Triangle aleta3 = new Triangle(x+55,y-20,x+45,y-10,x+45,y-30);
+  aleta3.style = s;
+  t.addItem(aleta3);
+  
+  Triangle aleta4 = new Triangle(x+55,y-60,x+45,y-50,x+45,y-70);
+  aleta4.style = s;
+  t.addItem(aleta4);
+  
+  return t;
+}
+
+Group cisne(int x, int y){
+  Group c = new Group();
+  Style s = new Style(0,#FAABCF, 1);
+  
+  Triangle cabeza = new Triangle(x,y-20,x+20,y,x+20,y-20);
+  cabeza.style = s;
+  c.addItem(cabeza);
+  
+  Quad cuello = new Quad(x+20,y,x+20,y-30,x+30,y-40,x+30,y-10);
+  cuello.style = s;
+  c.addItem(cuello);
+  
+  Quad cuello2 = new Quad(x+20,y-30,x+10,y-40,x+20,y-50,x+30,y-40);
+  cuello2.style = s;
+  c.addItem(cuello2);
+  
+  Triangle pecho = new Triangle(x+10,y-40,x+10,y-60,x+20,y-50);
+  pecho.style = s;
+  c.addItem(pecho);
+  
+  Triangle panza = new Triangle(x+10,y-60,x+25,y-45,x+25,y-75);
+  panza.style = s;
+  c.addItem(panza);
+  
+  Triangle ala = new Triangle(x+25,y-45,x+25,y-75,x+55,y-75);
+  ala.style = s;
+  c.addItem(ala);
+  
+  Triangle cola = new Triangle(x+25,y-45,x+50,y-70,x+75,y-45);
+  cola.style = s;
+  c.addItem(cola);
+  
+  return c;
+}
+
+Group caballo(int x, int y){
+  Group c = new Group();
+  Style s = new Style(0,#0DABCF, 1);
+  
+  Triangle cabeza = new Triangle(x+30,y,x+10,y-20,x+50,y-20);
+  cabeza.style = s;
+  c.addItem(cabeza);
+  
+  Rect cuello = new Rect(x+30, y-40,20,20);
+  cuello.style = s;
+  c.addItem(cuello);
+  
+  Triangle pecho = new Triangle(x+10,y-40,x+50,y-40,x+50,y-80);
+  pecho.style = s;
+  c.addItem(pecho);
+  
+  Triangle patasD = new Triangle(x,y-50,x+10,y-40,x+20,y-50);
+  patasD.style = s;
+  c.addItem(patasD);
+  
+  Triangle trasero = new Triangle(x+50,y-40,x+80,y-70,x+50,y-100);
+  trasero.style = s;
+  c.addItem(trasero);
+  
+  Triangle patasT = new Triangle(x+50,y-90,x+30,y-110,x+50,y-110);
+  patasT.style = s;
+  c.addItem(patasT);
+  
+  Quad cola = new Quad(x+80,y-70,x+70,y-90,x+80,y-120,x+90,y-100);
+  cola.style = s;
+  c.addItem(cola);
+  
+  return c;
+}
+
+Group pinguino(int x, int y){
+  Group p = new Group();
+  Style s = new Style(0,#A00FFF, 1);
+  
+  Triangle panza = new Triangle(x+40,y-40,x+70,y-40,x+40,y-70);
+  panza.style = s;
+  p.addItem(panza);
+  
+  Triangle nalgas = new Triangle(x+40,y-40,x+20,y-60,x+40,y-60);
+  nalgas.style = s;
+  p.addItem(nalgas);
+  
+  Quad cola = new Quad(x+17,y-70,x+27,y-60,x+40,y-60,x+30,y-70);
+  cola.style = s;
+  p.addItem(cola);
+  
+  Triangle patas = new Triangle(x+45,y-65,x+35,y-75,x+55,y-75);
+  patas.style = s;
+  p.addItem(patas);
+  
+  Triangle nuca = new Triangle(x+40,y-40,x+60,y-20,x+80,y-40);
+  nuca.style = s;
+  p.addItem(nuca);
+  
+  Quad cara = new Quad(x+70,y-30,x+80,y-20,x+90,y-30,x+80,y-40);
+  cara.style = s;
+  p.addItem(cara);
+  
+  Triangle pico = new Triangle(x+80,y-40,x+90,y-30,x+100,y-40);
+  pico.style = s;
+  p.addItem(pico);
+  
+  return p;
+}
+
+Group pato(int x, int y){
+  Group p = new Group();
+  Style s = new Style(0,#0000FF, 1);
+  
+  Triangle cabeza = new Triangle(x+20,y,x,y-20,x+40,y-20);
+  cabeza.style = s;
+  p.addItem(cabeza);
+  
+  Rect cuello = new Rect(x+20,y-40,20,20);
+  cuello.style = s;
+  p.addItem(cuello);
+  
+  Quad tronco = new Quad(x+20,y-40,x+40,y-60,x+80,y-60,x+80,y-40);
+  tronco.style = s;
+  p.addItem(tronco);
+  
+  Triangle trasero = new Triangle(x+80,y-40,x+50,y-70,x+110,y-70);
+  trasero.style = s;
+  p.addItem(trasero);
+  
+  Triangle pata1 = new Triangle(x+60,y-70,x+50,y-90,x+70,y-85);
+  pata1.style = s;
+  p.addItem(pata1);
+  
+  Triangle pata2 = new Triangle(x+90,y-70,x+80,y-90,x+100,y-85);
+  pata2.style = s;
+  p.addItem(pata2);
+  
+  return p;
+}
+
+Group gato(int x, int y){
+  Group g = new Group();
+  Style s = new Style(125,0, 1);
+  Triangle oreja1 = new Triangle(x,y,x,y-40,x+20,y-20);
+  oreja1.style = s;
+  g.addItem(oreja1);
+
+  Triangle oreja2 = new Triangle(x+40,y,x+40,y-40,x+20,y-20);
+  oreja2.style = s;
+  g.addItem(oreja2);
+ 
+  Quad cara = new Quad(x+20,y-20,x,y-40,x+20,y-60,x+40,y-40);
+  cara.style = s;
+  g.addItem(cara);
+ 
+  Triangle patas1 = new Triangle(x+40,y-40,x,y-80,x+80,y-80);
+  patas1.style = s;
+  g.addItem(patas1);
+ 
+  Triangle panza = new Triangle(x+60,y-60,x+80,y-80,x+100,y-60);
+  panza.style = s;
+  g.addItem(panza);
+ 
+  Triangle patas2 = new Triangle(x+100,y-60,x+60,y-100,x+140,y-100);
+  patas2.style = s;
+  g.addItem(patas2);
+  
+  Quad cola = new Quad(x+140,y-100,x+160,y-80,x+200,y-80,x+180,y-100);
+  cola.style = s;
+  g.addItem(cola);
+  
+  return g;
+}
